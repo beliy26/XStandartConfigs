@@ -9,14 +9,14 @@
 Скачайте последнюю версию, распакуйте и запустите обновление (одной командой):
 
 ```bash
-wget https://github.com/beliy26/XStandartConfigs/archive/refs/tags/Latest.zip -O /tmp/xstandart.zip && unzip -o /tmp/xstandart.zip -d /tmp/ && mv /tmp/XStandartConfigs-Latest/* /path/to/XStandartConfigs/ && chmod +x /path/to/XStandartConfigs/update.sh && rm -rf /tmp/xstandart.zip /tmp/XStandartConfigs-Latest && /path/to/XStandartConfigs/update.sh
+curl -L https://github.com/beliy26/XStandartConfigs/archive/refs/tags/Latest.zip -o /tmp/xstandart.zip && unzip -o /tmp/xstandart.zip -d /tmp/ && mv /tmp/XStandartConfigs-Latest/* /path/to/XStandartConfigs/ && chmod +x /path/to/XStandartConfigs/update.sh && rm -rf /tmp/xstandart.zip /tmp/XStandartConfigs-Latest && /path/to/XStandartConfigs/update.sh
 ```
 
 Или по шагам:
 
 ```bash
 # 1. Скачивание и распаковка
-wget https://github.com/beliy26/XStandartConfigs/archive/refs/tags/Latest.zip -O /tmp/xstandart.zip
+curl -L https://github.com/beliy26/XStandartConfigs/archive/refs/tags/Latest.zip -o /tmp/xstandart.zip
 unzip -o /tmp/xstandart.zip -d /tmp/
 
 # 2. Перемещение файлов
