@@ -1,0 +1,37 @@
+name: Upload All Files to Release
+
+on:
+  push:
+    branches:
+      - main  # можно указать любую ветку
+
+jobs:
+  upload_files:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up GitHub CLI
+        uses: actions/setup-gh-cli@v2
+
+      - name: Get latest release
+        id: get_release
+        run: |
+          latest_release=$(gh release list --limit 1 --json tagName -q '.[0].tagName')
+          if [ -z "$latest_release" ]; then
+            echo "No release found. Creating release 'latest'."
+            gh release create latest --title "Latest Release" --notes "Automated release"
+            echo "release_tag=latest" >> $GITHUB_OUTPUT
+          else
+            echo "Found release: $latest_release"
+            echo "release_tag=$latest_release" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Create zip of all files
+        run: |
+          zip -r repo_files.zip . -x .git/**
+
+      - name: Upload release asset
+        run: |
+          gh release upload ${{ steps.get_release.outputs.release_tag }} repo_files.zip --clobber
