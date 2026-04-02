@@ -9,14 +9,14 @@
 #### Вариант 1: Одной командой
 
 ```bash
-curl -L https://github.com/beliy26/XStandartConfigs/archive/refs/tags/latest.zip -o /tmp/xstandart.zip && unzip -o /tmp/xstandart.zip -d /tmp/ && cd /tmp/XStandartConfigs-latest && chmod +x update.sh && ./update.sh
+curl -L https://github.com/beliy26/XStandartConfigs/archive/refs/heads/master.zip -o /tmp/xstandart.zip && unzip -o /tmp/xstandart.zip -d /tmp/ && cd /tmp/XStandartConfigs-latest && chmod +x update.sh && ./update.sh
 ```
 
 #### Вариант 2: По шагам
 
 ```bash
 # 1. Скачивание
-curl -L https://github.com/beliy26/XStandartConfigs/archive/refs/tags/latest.zip -o /tmp/xstandart.zip
+curl -L https://github.com/beliy26/XStandartConfigs/archive/refs/heads/master.zip -o /tmp/xstandart.zip
 
 # 2. Распаковка
 unzip -o /tmp/xstandart.zip -d /tmp/
