@@ -9,7 +9,7 @@
 #### Вариант 1: Одной командой
 
 ```bash
-curl -L https://github.com/beliy26/XStandartConfigs/archive/refs/heads/master.zip -o /tmp/xstandart.zip && unzip -o /tmp/xstandart.zip -d /tmp/ && cd /tmp/XStandartConfigs-latest && chmod +x update.sh && ./update.sh
+curl -L https://github.com/beliy26/XStandartConfigs/archive/refs/heads/master.zip -o /tmp/xstandart.zip && unzip -o /tmp/xstandart.zip -d /tmp/ && cd /tmp/XStandartConfigs-master && chmod +x update.sh && ./update.sh
 ```
 
 #### Вариант 2: По шагам
@@ -22,7 +22,7 @@ curl -L https://github.com/beliy26/XStandartConfigs/archive/refs/heads/master.zi
 unzip -o /tmp/xstandart.zip -d /tmp/
 
 # 3. Переход в директорию
-cd /tmp/XStandartConfigs-latest
+cd /tmp/XStandartConfigs-master
 
 # 4. Добавление прав на выполнение
 chmod +x update.sh
