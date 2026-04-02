@@ -1,0 +1,96 @@
+{
+  "routing": {
+    "domainStrategy": "IPIfNonMatch",
+    "rules": [
+      {
+        "type": "field",
+        "inboundTag": [
+          "redirect",
+          "tproxy"
+        ],
+        "outboundTag": "block",
+        "network": "udp",
+        "port": "135,137,138,139"
+      },
+      {
+        "type": "field",
+        "inboundTag": [
+          "redirect",
+          "tproxy"
+        ],
+        "outboundTag": "block",
+        "ip": [
+          "155.212.204.0/24"
+        ]
+      },
+      {
+        "type": "field",
+        "inboundTag": [
+          "redirect",
+          "tproxy"
+        ],
+        "outboundTag": "block",
+        "domain": [
+          "domain:oneme.ru",
+          "domain:max.ru"
+        ]
+      },
+      {
+        "type": "field",
+        "inboundTag": [
+          "redirect",
+          "tproxy"
+        ],
+        "outboundTag": "direct",
+        "protocol": [
+          "bittorrent"
+        ]
+      },
+      {
+        "type": "field",
+        "inboundTag": [
+          "redirect",
+          "tproxy"
+        ],
+        "outboundTag": "direct",
+        "domain": [
+          "domain:edge-ams-1.kinescopecdn.net",
+          "regexp:^([\\w\\-\\.]+\\.)ru$",
+          "regexp:^([\\w\\-\\.]+\\.)su$",
+          "regexp:^([\\w\\-\\.]+\\.)xn--p1ai$",
+          "regexp:^([\\w\\-\\.]+\\.)xn--p1acf$",
+          "regexp:^([\\w\\-\\.]+\\.)xn--80asehdb$",
+          "regexp:^([\\w\\-\\.]+\\.)xn--c1avg$",
+          "regexp:^([\\w\\-\\.]+\\.)xn--80aswg$",
+          "regexp:^([\\w\\-\\.]+\\.)xn--80adxhks$",
+          "regexp:^([\\w\\-\\.]+\\.)moscow$",
+          "regexp:^([\\w\\-\\.]+\\.)xn--d1acj3b$",
+          "ext:geosite_v2fly.dat:category-gov-ru",
+          "ext:geosite_v2fly.dat:yandex",
+          "ext:geosite_v2fly.dat:vk",
+          "ext:geosite_v2fly.dat:steam"
+        ]
+      },
+      {
+        "type": "field",
+        "inboundTag": [
+          "redirect",
+          "tproxy"
+        ],
+        "outboundTag": "direct",
+        "ip": [
+          "ext:geoip_zkeenip.dat:ru"
+        ]
+      },
+      {
+        "type": "field",
+        "inboundTag": [
+          "redirect",
+          "tproxy"
+        ],
+        "outboundTag": "vless-reality",
+        "network": "tcp,udp"
+      }
+    ]
+  }
+}
