@@ -6,26 +6,22 @@
 
 ### Установка и обновление
 
-Скачайте последнюю версию, распакуйте и запустите обновление (одной командой):
+**Замените `/opt/xstandart` на ваш актуальный путь!**
+
+#### Вариант 1: Одной командой
 
 ```bash
-curl -L https://github.com/beliy26/XStandartConfigs/archive/refs/tags/Latest.zip -o /tmp/xstandart.zip && unzip -o /tmp/xstandart.zip -d /tmp/ && mv /tmp/XStandartConfigs-Latest/* /path/to/XStandartConfigs/ && chmod +x /path/to/XStandartConfigs/update.sh && rm -rf /tmp/xstandart.zip /tmp/XStandartConfigs-Latest && /path/to/XStandartConfigs/update.sh
+curl -L https://github.com/beliy26/XStandartConfigs/archive/refs/tags/Latest.zip -o /tmp/xstandart.zip && unzip -o /tmp/xstandart.zip -d /tmp/ && cp -rf /tmp/XStandartConfigs-Latest/* /opt/xstandart/ && chmod +x /opt/xstandart/update.sh && rm -rf /tmp/xstandart.zip /tmp/XStandartConfigs-Latest && /opt/xstandart/update.sh
 ```
 
-Или по шагам:
+#### Вариант 2: По шагам
 
 ```bash
-# 1. Скачивание и распаковка
+
 curl -L https://github.com/beliy26/XStandartConfigs/archive/refs/tags/Latest.zip -o /tmp/xstandart.zip
 unzip -o /tmp/xstandart.zip -d /tmp/
-
-# 2. Перемещение файлов
-mv /tmp/XStandartConfigs-Latest/* /path/to/XStandartConfigs/
-
-# 3. Добавление прав на выполнение
-chmod +x /path/to/XStandartConfigs/update.sh
-
-# 4. Запуск обновления
+cd /tmp/XStandartConfigs-Latest
+chmod +x update.sh
 ./update.sh
 ```
 
