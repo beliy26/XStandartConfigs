@@ -52,8 +52,20 @@
           "redirect",
           "tproxy"
         ],
+        "outboundTag": "vless-reality",
+        "domain": [
+          "domain:calcus.ru"
+        ]
+      },
+      {
+        "type": "field",
+        "inboundTag": [
+          "redirect",
+          "tproxy"
+        ],
         "outboundTag": "direct",
         "domain": [
+          "domain:42clouds.com",
           "domain:edge-ams-1.kinescopecdn.net",
           "regexp:^([\\w\\-\\.]+\\.)ru$",
           "regexp:^([\\w\\-\\.]+\\.)su$",
