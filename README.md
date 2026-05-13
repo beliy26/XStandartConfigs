@@ -2,35 +2,14 @@
 
 Набор стандартных конфигураций для XRay.
 
-## Как использовать
+## Установка и обновление
 
-### Установка и обновление
-
-#### Вариант 1: Одной командой
-
-```bash
-curl -L https://github.com/beliy26/XStandartConfigs/archive/refs/heads/master.zip -o /tmp/xstandart.zip && unzip -o /tmp/xstandart.zip -d /tmp/ && cd /tmp/XStandartConfigs-master && chmod +x update.sh && ./update.sh
+```sh
+curl https://raw.githubusercontent.com/beliy26/XStandartConfigs/master/update.sh | sh
 ```
 
-#### Вариант 2: По шагам
-
-```bash
-# 1. Скачивание
-curl -L https://github.com/beliy26/XStandartConfigs/archive/refs/heads/master.zip -o /tmp/xstandart.zip
-
-# 2. Распаковка
-unzip -o /tmp/xstandart.zip -d /tmp/
-
-# 3. Переход в директорию
-cd /tmp/XStandartConfigs-master
-
-# 4. Добавление прав на выполнение
-chmod +x update.sh
-
-# 5. Запуск обновления
-./update.sh
-```
+Скрипт автоматически скачает актуальные конфиги с GitHub, скопирует их в `/opt/etc/xray/configs/` и перезапустит XRay.
 
 ---
 
-**Примечание:** Скрипт `update.sh` требует наличия прав на запись в `/opt/etc/xray/configs/`.
+**Примечание:** Требуются права на запись в `/opt/etc/xray/configs/` и наличие `xkeen` в системе.
